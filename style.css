@@ -1,0 +1,109 @@
+:root {
+    --primary: #2ecc71;
+    --secondary: #27ae60;
+    --dark: #1a1a1a;
+}
+
+body {
+    transition: all 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-mode {
+    background: var(--dark);
+    color: #fff;
+}
+
+body.dark-mode .card,
+body.dark-mode .page {
+    background: #2d2d2d !important;
+    color: #fff;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200') center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.btn-custom {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+    color: white;
+}
+
+.facility-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    height: 100%;
+}
+
+.facility-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.summary-table th {
+    background: var(--primary);
+    color: white;
+}
+
+.thank-you-page {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}

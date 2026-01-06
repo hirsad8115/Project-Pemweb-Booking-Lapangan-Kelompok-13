@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapangan Hana - Booking Lapangan Olahraga</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="btn btn-outline-secondary dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Page 1: Home/Welcome -->
+    <div id="page1" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h1 class="display-1 mb-4"><i class="fas fa-futbol"></i> Lapangan Hana</h1>
+                <p class="lead mb-4 fs-3">Selamat Datang di Lapangan Hana</p>
+                <p class="fs-5 mb-5">Platform booking lapangan olahraga terbaik untuk Futsal dan Voli</p>
+                <button class="btn btn-custom btn-lg" onclick="goToPage(2)">Mulai Booking <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Fasilitas -->
+    <div id="page2" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Fasilitas Kami</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card facility-card">
+                        <img src="foto bola.jpeg" class="card-img-top" alt="Lapangan Futsal">
+                        <div class="card-body">
+                            <h3><i class="fas fa-futbol text-success"></i> Lapangan Futsal</h3>
+                            <p>Lapangan futsal standar internasional dengan rumput sintetis berkualitas tinggi, lampu penerangan, dan ruang ganti.</p>
+                            <ul>
+                                <li>Ukuran standar FIFA</li>
+                                <li>Rumput sintetis premium</li>
+                                <li>Lampu penerangan</li>
+                                <li>Ruang ganti lengkap</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card facility-card">
+                        <img src="foto voli project.png" class="card-img-top" alt="Lapangan Voli">
+                        <div class="card-body">
+                            <h3><i class="fas fa-volleyball-ball text-warning"></i> Lapangan Voli</h3>
+                            <p>Lapangan voli indoor dan outdoor dengan net standar kompetisi, lantai berkualitas, dan bola disediakan.</p>
+                            <ul>
+                                <li>Indoor & Outdoor</li>
+                                <li>Net standar kompetisi</li>
+                                <li>Lantai anti-slip</li>
+                                <li>Bola tersedia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button class="btn btn-custom btn-lg" onclick="goToPage(3)">Lanjut ke Harga <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Pricing -->
+    <div id="page3" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Daftar Harga</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="card text-center shadow-lg">
+                        <div class="card-body p-5">
+                            <i class="fas fa-futbol fa-3x text-success mb-3"></i>
+                            <h3>Lapangan Futsal</h3>
+                            <div class="price-tag my-4">Rp 100.000</div>
+                            <p class="text-muted fs-5">per jam</p>
+                            <hr>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Rumput Sintetis Premium</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Lampu Penerangan Standar</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Ruang Ganti Bersih</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Parkir Luas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card text-center shadow-lg">
+                        <div class="card-body p-5">
+                            <i class="fas fa-volleyball-ball fa-3x text-warning mb-3"></i>
+                            <h3>Lapangan Voli</h3>
+                            <div class="price-tag my-4">Rp 100.000</div>
+                            <p class="text-muted fs-5">per jam</p>
+                            <hr>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Indoor & Outdoor</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Net Standar Kompetisi</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Bola Disediakan</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Lantai Anti-Slip</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button class="btn btn-custom btn-lg" onclick="goToPage(4)">Lanjut ke Booking <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Booking Form - Biodata -->
+    <div id="page4" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Form Booking - Data Diri</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="biodataForm">
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-user me-2"></i>Nama Lengkap *</label>
+                                    <input type="text" class="form-control form-control-lg" id="bookingName" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-envelope me-2"></i>Email *</label>
+                                    <input type="email" class="form-control form-control-lg" id="bookingEmail" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-phone me-2"></i>No. Telepon *</label>
+                                    <input type="tel" class="form-control form-control-lg" id="bookingPhone" required>
+                                </div>
+                                <button type="submit" class="btn btn-custom btn-lg w-100">Lanjut <i class="fas fa-arrow-right ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Booking Form - Pilih Lapangan -->
+    <div id="page5" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Pilih Lapangan</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="facilityForm">
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-map-marker-alt me-2"></i>Jenis Lapangan *</label>
+                                    <select class="form-select form-select-lg" id="bookingFacility" required>
+                                        <option value="">-- Pilih Lapangan --</option>
+                                        <option value="futsal">Futsal - Rp 100.000/jam</option>
+                                        <option value="voli">Voli - Rp 100.000/jam</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-custom btn-lg w-100">Lanjut <i class="fas fa-arrow-right ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 6: Booking Form - Tanggal & Waktu -->
+    <div id="page6" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Pilih Tanggal & Waktu</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="dateTimeForm">
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-calendar me-2"></i>Tanggal Main *</label>
+                                    <input type="date" class="form-control form-control-lg" id="bookingDate" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-clock me-2"></i>Jam Mulai *</label>
+                                    <input type="time" class="form-control form-control-lg" id="bookingTime" required>
+                                </div>
+                                <button type="submit" class="btn btn-custom btn-lg w-100">Lanjut <i class="fas fa-arrow-right ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Booking Form - Durasi -->
+    <div id="page7" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Pilih Durasi</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="durationForm">
+                                <div class="mb-4">
+                                    <label class="form-label fs-5"><i class="fas fa-hourglass-half me-2"></i>Durasi (jam) *</label>
+                                    <input type="number" class="form-control form-control-lg" id="bookingDuration" min="1" max="8" value="1" required>
+                                    <small class="text-muted">Minimum 1 jam, maksimum 8 jam</small>
+                                </div>
+                                <button type="submit" class="btn btn-custom btn-lg w-100">Lanjut ke Jadwal <i class="fas fa-arrow-right ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 8: Schedule -->
+    <div id="page8" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-4">Jadwal Ketersediaan</h2>
+            <p class="text-center text-muted mb-5">Berikut jadwal ketersediaan lapangan minggu ini</p>
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800" class="img-fluid mb-4 rounded" alt="Jadwal">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="scheduleTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Senin</th>
+                            <th>Selasa</th>
+                            <th>Rabu</th>
+                            <th>Kamis</th>
+                            <th>Jumat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>08:00-10:00</strong></td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10:00-12:00</strong></td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>14:00-16:00</strong></td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>16:00-18:00</strong></td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>18:00-20:00</strong></td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                            <td class="table-success">Tersedia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center mt-4">
+                <a href="https://www.google.com/calendar" target="_blank" class="btn btn-outline-primary">
+                    <i class="fab fa-google"></i> Sinkronkan dengan Google Calendar
+                </a>
+            </p>
+            <div class="text-center mt-4">
+                <button class="btn btn-custom btn-lg" onclick="goToPage(9)">Lanjut ke Ringkasan <i class="fas fa-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 9: Summary -->
+    <div id="page9" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">Ringkasan Booking</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-success text-white text-center">
+                            <h4><i class="fas fa-clipboard-check me-2"></i>Detail Booking Anda</h4>
+                        </div>
+                        <div class="card-body p-5">
+                            <table class="table table-borderless summary-table">
+                                <tr>
+                                    <th width="40%">Nama</th>
+                                    <td id="summaryName"></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td id="summaryEmail"></td>
+                                </tr>
+                                <tr>
+                                    <th>No. Telepon</th>
+                                    <td id="summaryPhone"></td>
+                                </tr>
+                                <tr>
+                                   <th>Jenis Lapangan</th>
+                                    <td id="summaryFacility"></td>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <td id="summaryDate"></td>
+                                </tr>
+                                <tr>
+                                    <th>Jam Mulai</th>
+                                    <td id="summaryTime"></td>
+                                </tr>
+                                <tr>
+                                    <th>Durasi</th>
+                                    <td id="summaryDuration"></td>
+                                </tr>
+                                <tr class="border-top">
+                                    <th class="fs-4 text-success">Total Harga</th>
+                                    <td class="fs-3 fw-bold text-success" id="summaryTotal"></td>
+                                </tr>
+                            </table>
+                            <div class="alert alert-info mt-4">
+                                 <i class="fas fa-info-circle me-2"></i>
+                                Silakan lakukan pembayaran di tempat saat hari H
+                            </div>
+                            <button class="btn btn-custom btn-lg w-100" onclick="confirmBooking()">
+                                <i class="fas fa-check-circle me-2"></i>Konfirmasi Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 10: Thank You -->
+    <div id="page10" class="page">
+        <div class="thank-you-page">
+            <div class="container text-center">
+                <i class="fas fa-check-circle fa-5x mb-4"></i>
+                <h1 class="display-3 mb-4">Terima Kasih!</h1>
+                <p class="lead fs-3 mb-4">Booking Anda telah berhasil dikonfirmasi</p>
+                <p class="fs-5 mb-5">Terima kasih telah memboking di website kami.<br>Salam sehat dan sampai jumpa di Lapangan Hana!</p>
+                <div class="mt-5">
+                    <button class="btn btn-light btn-lg me-3" onclick="goToPage(1)">
+                        <i class="fas fa-home me-2"></i>Kembali ke Home
+                    </button>
+                    <button class="btn btn-outline-light btn-lg" onclick="goToPage(4)">
+                        <i class="fas fa-redo me-2"></i>Booking Lagi
+                    </button>
+                </div>
+                <div class="mt-5">
+                    <p class="fs-6">Hubungi kami:</p>
+                    <p><i class="fas fa-phone me-2"></i>+62 838-4587-0987</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@lapanganhana.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
